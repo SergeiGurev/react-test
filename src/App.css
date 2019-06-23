@@ -35,3 +35,8 @@
 .app-temp-value {
   font-size: 60px;
 }
+
+.ui.search .prompt,
+.ui.search.dropdown {
+  border-radius: 3px;
+}
