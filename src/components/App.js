@@ -5,7 +5,7 @@ import { observer } from 'mobx-react';
 import SearchCity from './SearchCity.js';
 import { List, Button, Dropdown, Loader, Dimmer } from 'semantic-ui-react';
 
-import { requestCountries } from './requests.js'
+import { requestCountries } from '../requests.js';
 
 const CustomLoader = () => (
   <Dimmer active inverted>
@@ -35,7 +35,6 @@ class App extends Component {
         .then(data => {
           if (data.error) {
             console.log(data.error);
-            updateCountries();
             return;
           }
           data = data.map(({code, name}) => ({
@@ -49,7 +48,6 @@ class App extends Component {
           console.log('fetching');
         },
         error => {
-          updateCountries();
           console.log(error);
         })
     }
