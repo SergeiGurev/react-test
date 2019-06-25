@@ -1,6 +1,6 @@
 import { types } from 'mobx-state-tree';
 
-import { requestSearchCity, requestWeather } from './requests.js';
+import { requestSearchCity, requestWeather } from '../requests.js';
 
 const Country = types.model('Country', {
   key: types.string,
