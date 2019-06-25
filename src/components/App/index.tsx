@@ -1,9 +1,8 @@
-import React from 'react';
-import './App.css';
+import React from 'react'
+import './App.css'
 
-import { List, Button, Dropdown, Search, Loader, Dimmer } from 'semantic-ui-react';
-
-import AppComposed, { TProps } from './composed';
+import { List, Button, Dropdown, Search, Loader, Dimmer } from 'semantic-ui-react'
+import AppComposed, { TProps } from './composed'
 
 const CustomLoader = () => (
   <Dimmer active inverted>
@@ -11,24 +10,24 @@ const CustomLoader = () => (
   </Dimmer>
 )
 
-const App = ({ store: {
-                isCountriesLoading,
-                isWeatherLoading,
-                temperature,
-                countries,
-                cities,
-                selectedCity,
-                updateSelectedCounrty,
-                handleCityClick,
-                removeCity,
-                selectedCountry,
-                searchValue,
-                handleSearchChange,
-                isSearchLoading,
-                searchResults, 
-                handleResultSelect
-              }
-            }: TProps) => (
+export const App = ({ store: {
+                        isCountriesLoading,
+                        isWeatherLoading,
+                        temperature,
+                        countries,
+                        cities,
+                        selectedCity,
+                        updateSelectedCounrty,
+                        handleCityClick,
+                        removeCity,
+                        selectedCountry,
+                        searchValue,
+                        handleSearchChange,
+                        isSearchLoading,
+                        searchResults, 
+                        handleResultSelect
+                      }
+                    }: TProps) => (
   <div className='App'>
     <div className='wrapper'>
       {isCountriesLoading ?
@@ -85,4 +84,4 @@ const App = ({ store: {
   </div>
 )
 
-export default AppComposed(App);
+export default AppComposed(App)

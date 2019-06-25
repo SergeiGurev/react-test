@@ -1,0 +1,138 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App component renders without error 1`] = `
+<div
+  className="App"
+>
+  <div
+    className="wrapper"
+  >
+    <div
+      className="app-temp"
+    >
+      <span
+        className="app-temp-value"
+      >
+        26°C
+      </span>
+    </div>
+    <div
+      className="app-input"
+    >
+      <Dropdown
+        additionLabel="Add "
+        additionPosition="top"
+        closeOnBlur={true}
+        closeOnEscape={true}
+        deburr={false}
+        fluid={true}
+        icon="dropdown"
+        minCharacters={1}
+        noResultsMessage="No results found."
+        onChange={[Function]}
+        openOnFocus={true}
+        options={
+          Array [
+            Object {
+              "key": "ru",
+              "text": "Russia",
+              "value": "ru",
+            },
+            Object {
+              "key": "ua",
+              "text": "Ukraine",
+              "value": "ua",
+            },
+          ]
+        }
+        placeholder="Select Country..."
+        renderLabel={[Function]}
+        search={true}
+        searchInput="text"
+        selectOnBlur={true}
+        selectOnNavigation={true}
+        selection={true}
+        wrapSelection={true}
+      />
+    </div>
+    <div
+      className="app-input"
+    >
+      <Search
+        disabled={false}
+        icon="search"
+        input="text"
+        loading={false}
+        minCharacters={1}
+        noResultsMessage="No results found."
+        onResultSelect={[Function]}
+        onSearchChange={[Function]}
+        placeholder="Search city..."
+        results={Array []}
+        showNoResults={true}
+        value=""
+      />
+    </div>
+    <List
+      selection={true}
+    >
+      <ListItem
+        active={true}
+        key="43"
+        onClick={[Function]}
+      >
+        <ListContent
+          floated="right"
+        >
+          <Button
+            as="button"
+            icon="delete"
+            onClick={[Function]}
+            size="mini"
+          />
+        </ListContent>
+        <ListIcon
+          name="marker"
+          size="large"
+          verticalAlign="middle"
+        />
+        <ListContent
+          verticalAlign="middle"
+        >
+          <ListHeader>
+            Saint-Peterspurg
+          </ListHeader>
+        </ListContent>
+      </ListItem>
+      <ListItem
+        active={false}
+        key="42"
+        onClick={[Function]}
+      >
+        <ListContent
+          floated="right"
+        >
+          <Button
+            as="button"
+            icon="delete"
+            onClick={[Function]}
+            size="mini"
+          />
+        </ListContent>
+        <ListIcon
+          name="marker"
+          size="large"
+          verticalAlign="middle"
+        />
+        <ListContent
+          verticalAlign="middle"
+        >
+          <ListHeader>
+            Kiev
+          </ListHeader>
+        </ListContent>
+      </ListItem>
+    </List>
+  </div>
+</div>
+`;

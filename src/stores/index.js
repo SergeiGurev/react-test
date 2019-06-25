@@ -1,6 +1,5 @@
-import { types } from 'mobx-state-tree';
-
-import { requestSearchCity, requestWeather } from '../requests.js';
+import { types } from 'mobx-state-tree'
+import { requestSearchCity, requestWeather } from '../requests.js'
 
 const Country = types.model('Country', {
   key: types.string,
@@ -39,8 +38,8 @@ const Store = types
       self.cities = cities;
     },
 
-    updateSelectedCounrty(country) {
-      self.selectedCountry = country;
+    updateSelectedCounrty(countryCode) {
+      self.selectedCountry = countryCode;
       self.searchValue = '';
       self.searchResults = [];
     },
@@ -117,4 +116,4 @@ const Store = types
     }
   }));
 
-  export default Store;
+  export default Store

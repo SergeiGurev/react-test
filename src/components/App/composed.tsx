@@ -1,10 +1,10 @@
-import { inject, observer } from 'mobx-react';
+import { inject, observer } from 'mobx-react'
 import {
   compose,
   lifecycle
-} from 'recompose';
+} from 'recompose'
 
-import { requestCountries } from '../../requests.js';
+import { requestCountries } from '../../requests.js'
 
 type TCountry = {
   key: string,
@@ -97,4 +97,4 @@ const AppComposed = compose<TProps, any>(
   observer,
 )
 
-export default AppComposed;
+export default AppComposed
