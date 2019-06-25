@@ -39,7 +39,7 @@ const Store = types
       self.cities = cities;
     },
 
-    updateSelectCounrty(country) {
+    updateSelectedCounrty(country) {
       self.selectedCountry = country;
       self.searchValue = '';
       self.searchResults = [];

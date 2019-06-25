@@ -6,10 +6,57 @@ import {
 
 import { requestCountries } from '../../requests.js';
 
-const AppComposed = compose(
+type TCountry = {
+  key: string,
+  value: string,
+  text: string
+}
+
+type TCity = {
+  title: string,
+  latitude: string,
+  longitude: string,
+  country: string,
+  region: string,
+}
+
+type TPropsMount = {
+  store: {
+    countries: Array<TCountry>,
+    updateCountries: (arg: Array<TCountry>) => void,
+    updateCities: (arg: Array<TCity>) => void,
+  },
+}
+
+type TDataMap = {
+  code: string,
+  name: string,
+}
+
+export type TProps = {
+  store: {
+    isCountriesLoading: boolean,
+    isWeatherLoading: boolean,
+    temperature: number,
+    countries: Array<TCountry>,
+    cities: Array<TCity>,
+    selectedCity: string,
+    updateSelectedCounrty: (arg: string) => void,
+    handleCityClick: (arg: TCity) => void,
+    removeCity: (arg: TCity) => void,
+    selectedCountry: string,
+    searchValue: string,
+    handleSearchChange: (arg: string) => void,
+    isSearchLoading: boolean,
+    searchResults: Array<TCity>,
+    handleResultSelect: (arg: TCity) => void,
+  }
+}
+
+const AppComposed = compose<TProps, any>(
   inject('store'),
 
-  lifecycle({
+  lifecycle<TPropsMount, any>({
     componentDidMount() {
       const { store: { 
                 countries,
@@ -32,7 +79,7 @@ const AppComposed = compose(
               console.log(data.error);
               return;
             }
-            data = data.map(({code, name}) => ({
+            data = data.map(({code, name}: TDataMap) => ({
               key: code,
               value: code,
               text: name

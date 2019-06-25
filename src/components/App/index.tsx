@@ -1,10 +1,9 @@
 import React from 'react';
 import './App.css';
 
-import { List, Button, Dropdown, Loader, Dimmer } from 'semantic-ui-react';
+import { List, Button, Dropdown, Search, Loader, Dimmer } from 'semantic-ui-react';
 
-import AppComposed from './composed';
-import SearchCity from '../SearchCity';
+import AppComposed, { TProps } from './composed';
 
 const CustomLoader = () => (
   <Dimmer active inverted>
@@ -12,19 +11,24 @@ const CustomLoader = () => (
   </Dimmer>
 )
 
-const App = ({ store,
-              store: { 
+const App = ({ store: {
                 isCountriesLoading,
                 isWeatherLoading,
                 temperature,
                 countries,
                 cities,
                 selectedCity,
-                updateSelectCounrty,
+                updateSelectedCounrty,
                 handleCityClick,
-                removeCity
+                removeCity,
+                selectedCountry,
+                searchValue,
+                handleSearchChange,
+                isSearchLoading,
+                searchResults, 
+                handleResultSelect
               }
-            }) => (
+            }: TProps) => (
   <div className='App'>
     <div className='wrapper'>
       {isCountriesLoading ?
@@ -38,7 +42,7 @@ const App = ({ store,
           </div>
           <div className='app-input'>
             <Dropdown
-              onChange={(e, { value }) => updateSelectCounrty(value)}
+              onChange={(e, { value }: any) => updateSelectedCounrty(value)}
               placeholder='Select Country...'
               fluid
               search
@@ -47,7 +51,15 @@ const App = ({ store,
             />
           </div>
           <div className='app-input'>
-            <SearchCity store={store} />
+            <Search
+              disabled={!selectedCountry}
+              loading={isSearchLoading}
+              onResultSelect={(e, { result }) => handleResultSelect(result)}
+              onSearchChange={(e, { value }: any) => handleSearchChange(value)}
+              results={searchResults}
+              value={searchValue}
+              placeholder='Search city...'
+            /> 
           </div>
           <List selection>
             {cities.map(city => (
