@@ -1,4 +1,5 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Зарегать ключи на [battuta.medunes.net](http://battuta.medunes.net) и [darksky.net/dev](https://darksky.net/dev)
+Положить сюда [src/requests.js](src/requests.js)
 
 ## Available Scripts
 
